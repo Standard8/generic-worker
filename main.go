@@ -62,6 +62,7 @@ var (
 	Features           []Feature = []Feature{
 		&LiveLogFeature{},
 		&ChainOfTrustFeature{},
+		&MountsFeature{},
 	}
 
 	version = "5.3.1"
@@ -183,6 +184,11 @@ and reports back results to the queue.
                                             over https. If not set, http will be used.
           usersDir                          The location where user home directories should be
                                             created on the worker. [default: C:\Users]
+          downloadsDir                      The location where resources are downloaded for
+                                            populating preloaded caches and readonly mounts.
+                                            [default: C:\generic-worker\downloads]
+          cachesDir                         The location where task caches should be stored on
+                                            the worker. [default: C:\generic-worker\caches]
           cleanUpTaskDirs                   Whether to delete the home directories of the task
                                             users after the task completes. Normally you would
                                             want to do this to avoid filling up disk space,
